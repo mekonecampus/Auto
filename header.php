@@ -82,31 +82,6 @@ require 'config.php';
             </div>
         </nav>
 
-        <script>
-            function signOut() {
-                var auth2 = gapi.auth2.getAuthInstance();
-
-                auth2.disconnect();
-
-                auth2.signOut().then(function () {
-                    window.location.href = "index.php";
-                    console.log('User signed out.');
-                });
-            }
-        </script>
-
-
-        <a href="#" onclick="signOut();">Sign out</a>
-        <script>
-            function signOut() {
-                var auth2 = gapi.auth2.getAuthInstance();
-                auth2.signOut().then(function () {
-                    console.log('User signed out.');
-                });
-            }
-        </script>
-
-
         <?php
         require 'placeholder.php'
         ?>

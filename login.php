@@ -8,7 +8,7 @@ session_start();
 require('config.php');
 //3. If the form is submitted or not.
 //3.1 If the form is submitted
-if (isset($_POST['username']) and isset($_POST['password'])) {
+if (!isset($_SESSION['username'])) {
 //3.1.1 Assigning posted values to variables.
     $username = $_POST['username'];
     $password = $_POST['password'];

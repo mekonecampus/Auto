@@ -9,9 +9,10 @@ require 'header.php'
     if (isset($_POST['username']) && isset($_POST['password'])){
         $username = $_POST['username'];
 	$email = $_POST['email'];
+        $gmail = $_POST['gmail'];
         $password = $_POST['password'];
  
-        $query = "INSERT INTO `user` (username, password, email) VALUES ('$username', '$password', '$email')";
+        $query = "INSERT INTO `user` (username, password, email, gmail) VALUES ('$username', '$password', '$email', '$gmail')";
         $result = $link->query($query);
         if($result){
             //$smsg = "User Created Successfully.";
