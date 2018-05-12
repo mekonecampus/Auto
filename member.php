@@ -14,7 +14,6 @@ if (isset($_SESSION['username'])) {
     echo '<p><a href="#">Event List [add, edit, delete]</a></p>';
     echo '<p><a href="#">Map [view, add, edit]</a></p>';
     echo '<p><a href="#">Calendar [view, add, edit]</a></p>';
-    //echo 'id=' . $_SESSION['idtoken'];
 } else {
 //3.2 When the user visits the page first time, simple login form will be displayed.
     header('Location: login.php');

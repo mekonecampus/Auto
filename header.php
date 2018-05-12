@@ -9,7 +9,7 @@ require 'config.php';
         <title>Web Practicum - Authentication Team</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="google-signin-client_id" content="50777253558-v48kiho4trs4vmo3juqb5ouvo0j1e3j5.apps.googleusercontent.com">
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css" >
         <link rel="stylesheet" type="text/css"
@@ -17,6 +17,8 @@ require 'config.php';
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
+        <meta name="google-signin-client_id" content="50777253558-i92jslnqpqa481bgs844n68isthuh7f5.apps.googleusercontent.com"></meta>
         <script>
             function showResult(str) {
                 if (str.length == 0) {

@@ -1,8 +1,10 @@
 <?php
+
 require 'header.php';
 ?>
 
 <?php
+
 // Initialize the session
 session_start();
 // If session variable is not set it will redirect to login page
@@ -29,6 +31,11 @@ if (!isset($_SESSION['username'])) {
             echo '<label class="medium">Phone:</label> <input name="phone" type="text" value=' . $row["phone"] . ' />';
             echo '<label class="medium">Status:</label> <input name="status" type="text" value=' . $row["status"] . ' />';
             echo '<p><input class="btn btn-default btn-lg" type="submit" value="Update"></p>';
+
+            require 'google.php';
+            $data = json_decode($_POST['json']);
+            var_dump($data);
+            echo $data;
         }
     } else {
         echo "No profile";
@@ -38,6 +45,7 @@ if (!isset($_SESSION['username'])) {
 ?>
 
 <?php
+
 require 'footer.php';
 ?>
 
