@@ -3,7 +3,7 @@
   server with default setting (user 'root' with no password) */
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'practicum');
-define('DB_PASSWORD', '***********');
+define('DB_PASSWORD', 'Netoua@99');
 define('DB_NAME', 'WebPracticumDB');
 
 /* Attempt to connect to MySQL database */
