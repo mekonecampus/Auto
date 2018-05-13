@@ -4,10 +4,6 @@ require 'header.php'
 
 
 <?php
-// Initialize the session
-session_start();
-$data = json_decode($_POST['json']);
-var_dump($data);
 require('config.php');
 // If the values are posted, insert them into the database.
 if (isset($_POST['username']) && isset($_POST['password'])) {

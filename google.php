@@ -6,16 +6,17 @@
     <button id="signOut" class="btn btn-default btn-lg" onclick="auth2.signOut()">Sign Out</button>
     <!-- <p>If the user chooses to disconnect, the app must delete all stored
     information retrieved from Google for the given user.</p> -->
-    <button id="disconnect" class="btn btn-default btn-lg" >Disconnect your Google account from this app</button>
+    <button id="disconnect" class="btn btn-default btn-lg">Disconnect your Google account from this app</button>
 
     <h2>User's profile information</h2>
     <div id="profile"></div>
 
     <h2>User's friends that are visible to this app</h2>
     <div id="visiblePeople"></div>
-
+<!--
     <h2>Authentication Logs</h2>
     <pre id="authResult"></pre>
+-->
 </div>
 <div id="loaderror">
     This section will be hidden by jQuery. If you can see this message, you
@@ -95,12 +96,6 @@
                 }).then(function (res) {
                     var profile = res.result;
 
-                    $.ajax({
-                        type: 'POST',
-                        url: 'profile.php',
-                        data: {json: JSON.stringify(profile)},
-                        dataType: 'json'
-                    });
 
                     console.log(profile);
                     $('#profile').empty();
@@ -120,6 +115,8 @@
                         $('#profile').append(
                                 $('<p><img src=\"' + profile.cover.coverPhoto.url + '\"></p>'));
                     }
+
+
                 }, function (err) {
                     var error = err.result;
                     $('#profile').empty();

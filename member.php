@@ -22,6 +22,14 @@ if (isset($_SESSION['username'])) {
 
 <?php
 
+$data = json_decode($_POST['json']);
+var_dump($data);
+echo $data;
+
+?>
+
+<?php
+
 require 'footer.php'
 ?>
 

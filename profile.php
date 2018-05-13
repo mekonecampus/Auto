@@ -33,9 +33,21 @@ if (!isset($_SESSION['username'])) {
             echo '<p><input class="btn btn-default btn-lg" type="submit" value="Update"></p>';
 
             require 'google.php';
-            $data = json_decode($_POST['json']);
-            var_dump($data);
-            echo $data;
+
+            //check if gmail exist in DB
+            $sql2 = "SELECT gmail FROM user WHERE username='$username' AND gmail != NULL";
+            $result2 = $link->query($sql2);
+            if ($result2->num_rows > 0) {
+                echo 'Your Gmail is already linked to this account!';
+            } else {
+                $sql3 = "Update user SET gmail='$my_email' WHERE username='$username'";
+                $result3 = $link->query($sql3);
+                if ($link->query($sql3) === TRUE) {
+                    echo "Your Gmail has been successfully linked to your profile!";
+                } else {
+                    echo 'Error linking your Gmail to your account!';
+                }
+            }
         }
     } else {
         echo "No profile";
