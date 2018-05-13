@@ -33,6 +33,9 @@ if (!isset($_SESSION['username'])) {
             echo '<p><input class="btn btn-default btn-lg" type="submit" value="Update"></p>';
 
             require 'google.php';
+            $_POST = json_decode(file_get_contents('php://input'), true);
+            echo $_POST['profile']['displayName'];
+            $my_email = $_POST['profile']['email'];
 
             //check if gmail exist in DB
             $sql2 = "SELECT gmail FROM user WHERE username='$username' AND gmail != NULL";

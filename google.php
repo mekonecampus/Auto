@@ -95,7 +95,7 @@
                     'userId': 'me'
                 }).then(function (res) {
                     var profile = res.result;
-                    fetch('/data.php', {
+                    fetch('profile.php', {
                         method: 'POST',
                         body: JSON.stringify({
                             profile: profile,
