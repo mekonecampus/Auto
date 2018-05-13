@@ -95,6 +95,21 @@
                     'userId': 'me'
                 }).then(function (res) {
                     var profile = res.result;
+                    fetch('/data.php', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            profile: profile,
+                        })
+                    })
+                    .then(function(response) {
+                            if (response.status >= 200 && response.status < 300) {
+                            return response.text()
+                    }
+                    throw new Error(response.statusText)
+                    })
+                    .then(function(response) {
+                     console.log(response);
+                    });
 
 
                     console.log(profile);
